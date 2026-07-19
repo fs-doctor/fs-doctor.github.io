@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>`
   const time = document.querySelector("#time")
   const date = new Date()
-  console.log(data.flatMap(obj => obj.time));
+  const grid = document.querySelector("#content-grid")
+  grid.style.gridTemplateColumns = `repeat(${schema.length}, minmax(200px, 1fr))`
   time.innerHTML = `当前日期：${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
   const select = document.querySelector("#select-grid")
   select.innerHTML = `<option value="day">当天</option>${data.flatMap((d) => {
@@ -52,7 +53,7 @@ function onSelectChangeEvent(event) {
         return times.map((time) => {
           return `${time[0]}月${time[1]}日${time[2] == 0 ? '上午' : '下午'}`
         }).join(',')
-      })(d[s.field]) : d[s.field]}</div>`
+      })(d[s.field]) : (d[s.field] ?? "")}</div>`
     }).join("")
   }).join("")
 }
