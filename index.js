@@ -44,7 +44,6 @@ function onSelectChangeEvent(event) {
     const date = new Date()
     value = `${date.getMonth() + 1},${date.getDate()},0`
   }
-  console.log(value)
   const split = value.split(',')
   const filtered = data.filter((d) => d.time.some(s => s[1] === parseInt(split[1])))
   grid.innerHTML += filtered.map((d) => {
