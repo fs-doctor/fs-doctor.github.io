@@ -51,7 +51,7 @@ function onSelectChangeEvent(event) {
     return schema.map((s, index) => {
       return `<div class="p center tl tb ${index === schema.length - 1 ? "tr" : ""}">${s.field === "time" ? (function (times) {
         return times.map((time) => {
-          return `${time[0]}月${time[1]}日${time[2] == 0 ? '上午' : '下午'}`
+          return `${time[0]}月${time[1]}日${time[2] == 0 ? '上午' : time[2] == 1 ? '下午' : '全天'}`
         }).join(',')
       })(d[s.field]) : (d[s.field] ?? "")}</div>`
     }).join("")
