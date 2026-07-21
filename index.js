@@ -12,7 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
       </select>
     </div>
   </div>
-  <div id="content-grid">
+  <div id="container">
+    <div id="content-grid">
+    </div>
+    <div style="flex: 1; width: 100%;"></div>
+    <div style="height: 30vh"></div>
+    <div id="board">
+      <div id="board-title">
+        <h3>公告栏</h3>
+      </div>
+      <div style="padding-inline: 1vw; padding-block: 1vh; text-indent: 2em;">${board}</div>
+    </div>
   </div>`
   const time = document.querySelector("#time")
   const date = new Date()
