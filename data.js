@@ -518,4 +518,4 @@ const data = [
     ],
   },
 ];
-const board = "7月22日（周三）下午皮肤科陈欢欢专家停诊。";
+const board = " ";
