@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }).sort((a, b) => {
     return a[1] - b[1]
   }).map((d) => {
-    return `<option value="${d.join(',')}">${d[1]}日</option>`
+    return `<option value="${d.join(',')}">${d[0]}月${d[1]}日</option>`
   }).join("")}`
   select.addEventListener("change", onSelectChangeEvent)
   onSelectChangeEvent({target: {value: "day"}})
